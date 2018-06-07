@@ -3,6 +3,7 @@ import numpy as np
 import imageio
 import glob
 import sys
+import datetime
 
 class GeoAdapter(object):
     def __init__(self, footprint):
@@ -72,17 +73,21 @@ class RainFallEstimator(object):
 def main(argv):
     footprint = argv[0]
     root_path = argv[1]
-    day = argv[2]
+    year = int(argv[2])
+    month = int(argv[3])
+    day = int(argv[4])
+    date = datetime.datetime(year, month, day)
     ga = GeoAdapter('data/radarsample/radarfootprint.tif')    
     processor = SignalProcessor(ga)
     aggregator = Aggregator(root_path)
     rfe = RainFallEstimator(processor, aggregator)
     for hour in range(24):
-        rain = rfe.aggregate(day, hour)
+        rain = rfe.aggregate(date.strftime('%Y-%m-%d'), hour)
         if rain is not None:
-            fname = "%s_%s.3003.tif" % (day, hour)
+            d = date + datetime.timedelta(hours=hour + 1)
+            fname = "%s.3003.tif" % (d.strftime('%Y-%m-%d_%H'))
             ga.save_as_raster(rain, fname)
             print('Saved %s' % fname)
-
+            
 if __name__ == "__main__":
     main(sys.argv[1:])
