@@ -51,7 +51,7 @@ class Aggregator(object):
     def __init__(self, path_root):
         self.path_root = path_root
     def aggregate(self, day, hour):
-        return glob.glob('%s/%s_%s:*.png' % (self.path_root, day, hour))
+        return glob.glob('%s/%s_%02d:*.png' % (self.path_root, day, hour))
     
 class RainFallEstimator(object):
     def __init__(self, processor, aggregator):
