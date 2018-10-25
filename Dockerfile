@@ -6,9 +6,11 @@ RUN useradd -m jupyter && \
 
 WORKDIR /home/jupyter
 USER jupyter
-RUN mkdir .jupyter notebooks
+RUN mkdir .jupyter
 COPY --chown=jupyter jupyter_notebook_config.py .jupyter/
-COPY --chown=jupyter radar notebooks/radar
+COPY --chown=jupyter check check_notebook.py ./
+COPY --chown=jupyter notebooks notebooks
+
 WORKDIR notebooks
 
 EXPOSE 8888
