@@ -1,0 +1,4 @@
+# all we need for cdo (?)
+aurman -S cdo
+pip install cdo
+
