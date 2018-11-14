@@ -11,7 +11,7 @@ notebooks=(
 
 pushd "${this_dir}/notebooks"
 for n in ${notebooks[@]}; do
-    jupyter nbconvert --to notebook --execute --output /tmp/foo "${n}"
+    jupyter nbconvert --ExecutePreprocessor.timeout=300 --to notebook --execute --output /tmp/foo "${n}"
     python ../check_notebook.py /tmp/foo.ipynb
 done
 popd
