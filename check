@@ -7,6 +7,8 @@ this_dir=$(cd -P -- "$(dirname -- "${this}")" && pwd -P)
 
 notebooks=(
     "radar/EstimateRainfall.ipynb"
+    "radar/cfradar.ipynb"
+    "radar/rain_anim.ipynb"
 )
 
 pushd "${this_dir}/notebooks"
