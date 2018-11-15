@@ -2,7 +2,9 @@ FROM crs4/tdm-tools:latest
 MAINTAINER simone.leo@crs4.it
 
 RUN useradd -m jupyter && \
-    pip install --no-cache-dir matplotlib jupyter
+    pip install --no-cache-dir Cython && \
+    pip install --no-cache-dir \
+                matplotlib jupyter xarray pyproj cartopy scipy
 
 WORKDIR /home/jupyter
 USER jupyter
