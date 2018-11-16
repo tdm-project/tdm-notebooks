@@ -3,8 +3,8 @@ MAINTAINER simone.leo@crs4.it
 
 RUN useradd -m jupyter && \
     pip install --no-cache-dir Cython && \
-    pip install --no-cache-dir \
-                matplotlib jupyter xarray pyproj cartopy scipy
+    pip install --no-cache-dir matplotlib jupyter xarray pyproj scipy && \
+    pip install --no-cache-dir cartopy 
 
 WORKDIR /home/jupyter
 USER jupyter
