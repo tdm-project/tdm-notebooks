@@ -9,6 +9,7 @@ notebooks=(
     "radar/EstimateRainfall.ipynb"
     "radar/cfradar.ipynb"
     "radar/rain_anim.ipynb"
+    "radar/try_warp.ipynb"
 )
 
 pushd "${this_dir}/notebooks"
