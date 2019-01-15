@@ -8,6 +8,7 @@ this_dir=$(cd -P -- "$(dirname -- "${this}")" && pwd -P)
 notebooks=(
     "radar/EstimateRainfall.ipynb"
     "radar/cfradar.ipynb"
+    "radar/ckan.ipynb"
     "radar/netcdf_howto.ipynb"
     "radar/rain_anim.ipynb"
     "radar/try_warp.ipynb"
