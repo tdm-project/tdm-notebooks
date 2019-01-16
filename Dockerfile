@@ -5,7 +5,9 @@ RUN useradd -m jupyter && \
     pip install --no-cache-dir \
         ckanapi \
         jupyter \
-        matplotlib
+        matplotlib \
+        cartopy
+
 
 WORKDIR /home/jupyter
 USER jupyter
