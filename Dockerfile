@@ -3,9 +3,14 @@ MAINTAINER simone.leo@crs4.it
 
 RUN useradd -m jupyter && \
     pip install --no-cache-dir \
+        wget \
         ckanapi \
         jupyter \
-        matplotlib
+        matplotlib \
+        cartopy \
+        easydev \
+        colormap
+
 
 WORKDIR /home/jupyter
 USER jupyter
