@@ -6,6 +6,7 @@ this="${BASH_SOURCE-$0}"
 this_dir=$(cd -P -- "$(dirname -- "${this}")" && pwd -P)
 
 notebooks=(
+    "meteosim/check_ra_1.ipynb"
     "radar/EstimateRainfall.ipynb"
     "radar/cfradar.ipynb"
     "radar/ckan.ipynb"
