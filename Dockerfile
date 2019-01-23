@@ -1,4 +1,4 @@
-FROM crs4/tdm-tools:latest
+FROM tdmproject/tdm-tools:latest
 MAINTAINER simone.leo@crs4.it
 
 RUN useradd -m jupyter && \

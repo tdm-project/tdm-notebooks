@@ -16,5 +16,5 @@ install: true
 before_script: flake8 -v .
 
 script:
- - docker build -t crs4/tdm-notebooks .
- - docker run --rm --entrypoint ../check crs4/tdm-notebooks
+ - docker build -t tdmproject/tdm-notebooks .
+ - docker run --rm --entrypoint ../check tdmproject/tdm-notebooks
